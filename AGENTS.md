@@ -92,7 +92,17 @@ precio ("Conversemos"), dos grupos de variantes con radios accesibles
 remoto), descripción que cambia con el formato (atributo `data-desc`), estado de stock,
 tabla de especificaciones y dos acciones: "Sumar al equipo" (agrega al carrito) y
 "Guardar como PDF" (`window.print()`).
-La columna de la imagen es `position:sticky`, como en cualquier PDP.
+La columna de la imagen (`.pdp__col`) es `position:sticky`, como en cualquier PDP, y
+debajo de la foto lleva una etiqueta (`.pdp__code`) con **un código de barras Code 39 real
+y escaneable** que codifica `CC-2026`, más el SKU como pie.
+
+El patrón está generado y verificado con round-trip (se decodifica de vuelta a `*CC-2026*`);
+son 45 `<rect>` con anchos 2 (angosto) y 6 (ancho), separadores de 2 y zonas mudas de 20.
+Si cambias el texto del código hay que regenerar el patrón, no basta con editar el SKU.
+
+**Ojo con `.pdp__label`:** ese nombre ya lo usan los rótulos "FORMATO" y "MODALIDAD"
+(`display:block; opacity:.62`). La etiqueta del código de barras se llama `.pdp__code`
+justamente porque la primera versión colisionó y heredaba la opacidad.
 
 ### Carrito y checkout (`#minicart`)
 

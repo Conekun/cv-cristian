@@ -754,8 +754,12 @@ section{ scroll-margin-top:calc(var(--nav-h) + 12px); }
   display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
   gap:clamp(26px,4vw,58px); align-items:start;
 }
-.pdp__media{
+.pdp__col{
   position:sticky; top:calc(var(--nav-h) + 24px);
+  display:grid; gap:12px;
+}
+.pdp__media{
+  position:relative;
   background:var(--cream);
   border-radius:var(--r-lg);
   aspect-ratio:4/4.4;
@@ -769,10 +773,21 @@ section{ scroll-margin-top:calc(var(--nav-h) + 12px); }
   font-size:.75rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
   padding:8px 15px; border-radius:var(--r-pill);
 }
+.pdp__code{
+  background:var(--cream-hi);
+  border-radius:16px;
+  padding:14px 18px 11px;
+  display:grid; gap:9px;
+}
+.barcode{
+  width:100%; height:46px; display:block;
+  shape-rendering:crispEdges;
+}
+.barcode rect{ fill:var(--ink); }
 .pdp__sku{
-  position:absolute; bottom:16px; right:16px; z-index:2;
-  font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--ink-soft);
+  font-size:.7rem; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--ink-soft); line-height:1;
+  text-align:center; text-indent:.3em;
 }
 
 .pdp__crumbs{
@@ -873,7 +888,7 @@ button.btn{ font-family:var(--body); }
 
 @media (max-width:900px){
   .pdp{ grid-template-columns:1fr; }
-  .pdp__media{ max-width:340px; margin-inline:auto; }
+  .pdp__col{ max-width:340px; margin-inline:auto; }
 }
 @media (max-width:520px){
   .pdp__specs div{ grid-template-columns:1fr; gap:2px; padding-block:10px; }
@@ -1515,10 +1530,15 @@ button.btn{ font-family:var(--body); }
 
     <div class="pdp">
       <!-- imagen del producto -->
-      <div class="pdp__media reveal">
-        <span class="pdp__flag">Edición única</span>
-        <img class="portrait__img" src="foto.jpg" alt="Cristian Conejeros, líder de marketing" width="913" height="1050">
-        <span class="pdp__sku">SKU · CC-2026</span>
+      <div class="pdp__col reveal">
+        <div class="pdp__media">
+          <span class="pdp__flag">Edición única</span>
+          <img class="portrait__img" src="foto.jpg" alt="Cristian Conejeros, líder de marketing" width="913" height="1050">
+        </div>
+        <div class="pdp__code">
+          <svg class="barcode" viewBox="0 0 326 100" preserveAspectRatio="none" role="img" aria-label="Código de barras: CC-2026"><rect x="20" y="0" width="2" height="100"/><rect x="28" y="0" width="2" height="100"/><rect x="32" y="0" width="6" height="100"/><rect x="40" y="0" width="6" height="100"/><rect x="48" y="0" width="2" height="100"/><rect x="52" y="0" width="6" height="100"/><rect x="60" y="0" width="6" height="100"/><rect x="68" y="0" width="2" height="100"/><rect x="76" y="0" width="2" height="100"/><rect x="80" y="0" width="2" height="100"/><rect x="84" y="0" width="6" height="100"/><rect x="92" y="0" width="6" height="100"/><rect x="100" y="0" width="2" height="100"/><rect x="108" y="0" width="2" height="100"/><rect x="112" y="0" width="2" height="100"/><rect x="116" y="0" width="2" height="100"/><rect x="124" y="0" width="2" height="100"/><rect x="128" y="0" width="2" height="100"/><rect x="132" y="0" width="6" height="100"/><rect x="140" y="0" width="6" height="100"/><rect x="148" y="0" width="2" height="100"/><rect x="152" y="0" width="6" height="100"/><rect x="164" y="0" width="2" height="100"/><rect x="168" y="0" width="2" height="100"/><rect x="172" y="0" width="6" height="100"/><rect x="180" y="0" width="2" height="100"/><rect x="184" y="0" width="2" height="100"/><rect x="192" y="0" width="6" height="100"/><rect x="200" y="0" width="6" height="100"/><rect x="208" y="0" width="2" height="100"/><rect x="212" y="0" width="2" height="100"/><rect x="216" y="0" width="6" height="100"/><rect x="228" y="0" width="2" height="100"/><rect x="232" y="0" width="2" height="100"/><rect x="236" y="0" width="6" height="100"/><rect x="244" y="0" width="2" height="100"/><rect x="248" y="0" width="6" height="100"/><rect x="260" y="0" width="6" height="100"/><rect x="268" y="0" width="2" height="100"/><rect x="272" y="0" width="2" height="100"/><rect x="276" y="0" width="2" height="100"/><rect x="284" y="0" width="2" height="100"/><rect x="288" y="0" width="6" height="100"/><rect x="296" y="0" width="6" height="100"/><rect x="304" y="0" width="2" height="100"/></svg>
+          <span class="pdp__sku">SKU · CC-2026</span>
+        </div>
       </div>
 
       <!-- info del producto -->
