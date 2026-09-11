@@ -144,7 +144,7 @@ section{ scroll-margin-top:calc(var(--nav-h) + 12px); }
   display:inline-flex; align-items:center; gap:10px;
   font-family:var(--display); font-variation-settings:var(--wonky);
   font-weight:800; font-size:1.28rem; letter-spacing:-0.02em;
-  text-decoration:none; white-space:nowrap;
+  text-decoration:none; white-space:nowrap; padding-block:7px;
 }
 .brand .spark{ color:var(--coral); font-size:1.15rem; }
 
@@ -264,6 +264,10 @@ section{ scroll-margin-top:calc(var(--nav-h) + 12px); }
   margin-bottom:32px;
 }
 .hero__actions{ display:flex; flex-wrap:wrap; gap:12px; }
+/* apilados, el principal va primero: el orden es jerarquia */
+@media (max-width:560px){
+  .hero__actions{ flex-direction:column-reverse; align-items:flex-start; }
+}
 
 /* --- photo composition --- */
 .portrait{
@@ -319,7 +323,7 @@ section{ scroll-margin-top:calc(var(--nav-h) + 12px); }
 }
 .portrait__card a, .portrait__card span{
   display:flex; align-items:center; gap:10px;
-  font-size:.9rem; text-decoration:none; padding-block:3px;
+  font-size:.9rem; text-decoration:none; padding-block:11px;
   color:color-mix(in srgb, var(--cream) 88%, transparent);
   transition:color .2s ease;
 }
@@ -553,7 +557,16 @@ section{ scroll-margin-top:calc(var(--nav-h) + 12px); }
 /* ============================================================
    SKILLS
    ============================================================ */
-.skills{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(28px,4vw,54px); }
+/* 4 grupos: 4 / 2 / 1 columnas, nunca 3 (dejaría uno huérfano en otra fila) */
+.skills{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(26px,3.2vw,44px); }
+@media (min-width:1080px){
+  .skills{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  /* en 4 columnas "Marca y contenido" ocupa dos líneas: se le reserva
+     esa altura a todos para que los chips arranquen parejos */
+  .skills__label{ font-size:1.42rem; align-items:flex-start; min-height:2.4em; }
+  .skills__label .spark{ margin-top:.28em; }
+}
+@media (max-width:620px){ .skills{ grid-template-columns:1fr; } }
 .skills__label{
   font-family:var(--display); font-variation-settings:"SOFT" 70,"WONK" 1;
   font-weight:800; font-size:1.72rem; margin-bottom:18px;
@@ -645,7 +658,7 @@ a.work__card:hover{ transform:translateY(-7px); box-shadow:0 26px 46px -30px rgb
   margin-top:44px; display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:center;
   font-size:.94rem; opacity:.72;
 }
-.contact__meta a{ text-decoration:none; }
+.contact__meta a{ text-decoration:none; display:inline-block; padding-block:10px; }
 .contact__meta a:hover{ color:var(--amber); }
 
 .foot{
@@ -876,7 +889,10 @@ button.btn{ font-family:var(--body); }
 }
 .pdp__specs dt{ opacity:.6; }
 .pdp__specs dd{ margin:0; color:var(--cream-hi); }
-.pdp__specs dd a{ text-decoration:none; border-bottom:1px solid var(--amber); }
+.pdp__specs dd a{
+  text-decoration:none; border-bottom:1px solid var(--amber);
+  display:inline-block; padding-block:12px;
+}
 .pdp__specs dd a:hover{ color:var(--amber); }
 
 @media (max-width:900px){
@@ -986,7 +1002,7 @@ button.btn{ font-family:var(--body); }
 .minicart__top .cart-ico{ color:var(--coral); }
 .minicart__x{
   background:none; border:0; cursor:pointer; color:var(--ink-soft);
-  font-size:1.9rem; line-height:1; padding:2px 8px; border-radius:10px;
+  font-size:1.9rem; line-height:1; padding:8px 14px; border-radius:10px;
   font-family:var(--body);
 }
 .minicart__x:hover{ color:var(--coral); }
@@ -1089,33 +1105,52 @@ button.btn{ font-family:var(--body); }
 }
 
 /* ============================================================
-   PRINT
+   PRINT — el PDF es la misma página, con su color
    ============================================================ */
+@page{ size:A4; margin:0; }
+
 @media print{
-  .nav, .marquee, .ghost, .badge, .twinkle, .hero__actions, .contact__row, .work__go,
-  .progress, .cartbar, #ficha, .minicart, .navcart{ display:none !important; }
-  .proof{ display:none !important; }
-  .ecom{ grid-template-columns:repeat(2,1fr) !important; gap:8px !important; }
-  .ecom__card{
-    background:#fff !important; border:1px solid #999 !important;
-    break-inside:avoid; box-shadow:none !important;
-    padding:10px 12px !important; gap:5px !important;
+  /* los fondos y colores sí se imprimen */
+  *, *::before, *::after{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+    animation:none !important;
+    transition:none !important;
   }
-  .ecom__lead, .ecom__num{ color:#000 !important; }
-  .ecom__title{ font-size:1.15rem !important; }
-  .ecom__desc{ font-size:9.5pt !important; line-height:1.35 !important; }
-  .ecom__tags span{ background:#eee !important; color:#000 !important; font-size:8pt !important; padding:3px 8px !important; }
-  body{ background:#fff; color:#000; font-size:11pt; }
-  .band, .band--forest, .band--amber, .band--ink{ background:#fff !important; color:#000 !important; padding-block:18px; }
-  .job, .job--now{ background:#fff !important; color:#000 !important; border:1px solid #999 !important; break-inside:avoid; box-shadow:none !important; }
-  .job--now .job__co, .sec-head h2, .contact h2 em, .work__card--main .work__title{ color:#000 !important; }
-  .job__when, .chip, .tag{ background:#eee !important; color:#000 !important; }
-  .tl__year, .tl__school, .fact__v, .contact h2{ color:#000 !important; }
-  .job__list .spark, .tl__dot, .sec-head .spark{ color:#666 !important; }
-  .portrait, .portrait__img{ display:none; }
-  .hero__grid{ grid-template-columns:1fr; }
-  a{ text-decoration:none; }
+
+  html, body{
+    width:100%; margin:0;
+    background:var(--cream) !important;
+    color:var(--ink);
+  }
+
+  /* fuera solo lo que existe para interactuar */
+  .progress, .nav, .cartbar, .minicart, .navcart,
+  .twinkle, .ghost, [data-print], .mcback{ display:none !important; }
+
+  /* lo que aparece al hacer scroll tiene que verse siempre */
+  .js .reveal, .js .reveal.in{
+    opacity:1 !important; transform:none !important; transition-delay:0s !important;
+  }
+  /* el rotador de roles se detiene en el primero */
+  .hero__roles span{ opacity:0; transform:none !important; }
+  .hero__roles span:first-child{ opacity:1; }
+
+  /* bandas a sangre, un poco más compactas que en pantalla */
+  .band{ padding-block:44px !important; }
+  .hero{ padding-block:32px 40px !important; }
+  .marquee{ padding-block:10px !important; }
+
+  /* solo se protegen las piezas chicas: si se protegen las grandes,
+     cada una que no cabe empuja media página en blanco */
+  .ecom__card, .work__card, .tl__item, .fact{ break-inside:avoid; }
+  .sec-head{ break-after:avoid; }
+
+  /* los botones se quedan: son parte de cómo se ve la página */
+  .btn{ box-shadow:none !important; }
+  a{ text-decoration:none; color:inherit; }
 }
+
 </style>
 </head>
 <body>
@@ -1408,37 +1443,55 @@ button.btn{ font-family:var(--body); }
     </div>
 
     <div class="skills">
+      <div class="reveal">
+        <h3 class="skills__label">
+          <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z"/></svg>
+          Adquisición
+        </h3>
+        <div class="chips">
+          <span class="chip">Growth y adquisición digital</span>
+          <span class="chip">Marketing digital</span>
+          <span class="chip">Gestión de redes sociales</span>
+        </div>
+      </div>
+
       <div class="reveal d1">
         <h3 class="skills__label">
           <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z"/></svg>
-          Habilidades
+          Marca y contenido
         </h3>
         <div class="chips">
-          <span class="chip">Marketing digital</span>
-          <span class="chip">Gestión de redes sociales</span>
-          <span class="chip">Producción audiovisual</span>
           <span class="chip">Comunicación estratégica</span>
           <span class="chip">Redacción creativa</span>
-          <span class="chip">Comunicación interna</span>
-          <span class="chip chip--star">
-            <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z"/></svg>
-            Desarrollo con IA
-          </span>
-          <span class="chip">Growth y adquisición digital</span>
+          <span class="chip">Producción audiovisual</span>
+          <span class="chip">Fotografía y video</span>
         </div>
       </div>
 
       <div class="reveal d2">
         <h3 class="skills__label">
           <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z"/></svg>
-          Competencias
+          Sitio y datos
+        </h3>
+        <div class="chips">
+          <span class="chip chip--star">
+            <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z"/></svg>
+            Desarrollo con IA
+          </span>
+          <span class="chip">Análisis de datos</span>
+          <span class="chip">Gestión de presupuesto</span>
+        </div>
+      </div>
+
+      <div class="reveal d3">
+        <h3 class="skills__label">
+          <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z"/></svg>
+          Equipo
         </h3>
         <div class="chips">
           <span class="chip">Liderazgo de equipos</span>
-          <span class="chip">Análisis de datos</span>
           <span class="chip">Gestión de proyectos</span>
-          <span class="chip">Fotografía y video</span>
-          <span class="chip">Gestión de presupuesto</span>
+          <span class="chip">Comunicación interna</span>
         </div>
       </div>
     </div>

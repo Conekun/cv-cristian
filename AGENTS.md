@@ -341,12 +341,23 @@ industria técnica") y Cristian lo corrigió (sep 2026). Texto actual:
 
 ### Habilidades y competencias
 
-Habilidades: Marketing digital · Gestión de redes sociales · Producción audiovisual ·
-Comunicación estratégica · Redacción creativa · Comunicación interna · **Desarrollo con IA** ·
-Growth y adquisición digital
+**Agrupadas por tipo de trabajo (sep 2026).** Antes eran dos bolsas, "Habilidades" y
+"Competencias" — la partición heredada de LinkedIn, que no decía nada y dejaba trece chips
+sueltos. Cristian pidió que se leyeran como un conjunto. Quedaron cuatro grupos con nombre
+propio, deliberadamente distintos de los verbos de `#ecommerce` (Atraer/Convertir/Retener/
+Medir) para no repetir las mismas cuatro palabras dos secciones seguidas:
 
-Competencias: Liderazgo de equipos · Análisis de datos · Gestión de proyectos ·
-Fotografía y video · Gestión de presupuesto
+- **Adquisición:** Growth y adquisición digital · Marketing digital · Gestión de redes sociales
+- **Marca y contenido:** Comunicación estratégica · Redacción creativa · Producción audiovisual ·
+  Fotografía y video
+- **Sitio y datos:** **Desarrollo con IA** · Análisis de datos · Gestión de presupuesto
+- **Equipo:** Liderazgo de equipos · Gestión de proyectos · Comunicación interna
+
+Son las mismas trece de siempre: no se agregó ni se quitó ninguna, solo se ordenaron.
+
+La grilla va a 4 / 2 / 1 columnas y **nunca a 3**: con cuatro grupos, tres columnas dejan
+uno huérfano en una segunda fila. En 4 columnas el título baja a 1.42rem y se le reserva
+altura de dos líneas ("Marca y contenido" se parte) para que los chips arranquen parejos.
 
 **"Desarrollo con IA" es deliberado**: se refiere a que construye webs, plataformas y
 automatizaciones con IA, no a "usar ChatGPT". Ya se descartaron las variantes
