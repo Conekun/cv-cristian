@@ -179,11 +179,77 @@ contextos sin API segura (por ejemplo abrir el archivo con `file://`).
 - +569 5886 9612
 - Portafolio actual (Canva): https://cristiaconejeros.my.canva.site/portafolio-cristian-conejeros
 
-### Hero (reposicionado a ecommerce)
+### Qué se puede reclamar y qué no (sep 2026)
 
-> Llevo el marketing de una startup chilena y construyo las páginas donde ocurre la
-> conversión. Tráfico que sirve, una página que se entiende y datos para decidir dónde va
-> la próxima moneda.
+Cristian **nunca ha creado una página de ecommerce real** ni ha administrado una tienda:
+sin plataforma (Shopify/VTEX/Woo), sin catálogo, sin medios de pago, sin logística. Quiere
+mostrar que sabe **sin sonar experto ni mentir**. Se auditó el sitio y se corrigieron cuatro
+frases que insinuaban experiencia de tienda:
+
+| Antes | Ahora |
+|---|---|
+| "Si voy a decir que **sé armar una tienda**, lo justo es mostrarlo" | "No he administrado una tienda, pero sé cómo funciona una ficha de producto. Así que armé una." |
+| "sostiene la relación **después de la primera compra**… el **segundo pedido** cueste menos" | "sostiene la relación cuando la campaña ya terminó… la próxima conversión no parta de cero" |
+| "Construyo la página donde ocurre **la venta**" (rol del hero) | "Construyo las páginas donde ocurre la conversión" |
+| "La página **que vende**" (tarjeta Convertir) | "La página donde se decide" |
+
+**El criterio:** la precisión distingue a quien sabe de quien alardea; un vacío no delata,
+una frase vaga sí. Y el vacío de Cristian es el barato de cerrar — la tienda ya existe en
+cualquier empresa que contrate un Ecommerce Manager; lo difícil es traer tráfico, marca y
+criterio de datos.
+
+**Excepción legítima:** la descripción de la variante "Jornada completa" dice "me hago cargo
+del canal digital: … la página donde ocurre la venta". Eso describe **el trabajo que
+tomaría**, no lo que ya hizo. Postular implica decir que puedes hacerlo.
+
+### "Ecommerce & Growth" se eliminó como etiqueta personal (sep 2026)
+
+Cristian objetó que `Enfoque: Ecommerce & Growth` describía **lo que quiere lograr, no lo
+que hace**: su enfoque real es marketing. Se eligió *"el cargo real adelante"*: primero lo
+verificable, y que el interés por ecommerce lo cuente la sección entera dedicada a eso.
+
+- `Enfoque` → **Marca, contenido y adquisición** (antes "Ecommerce & Growth")
+- `<title>` y `og:title` → **Cristian Conejeros — Líder de Marketing**
+- `.pdp__sub` → **Líder de Marketing · Marca, contenido y adquisición**
+- `.badge--1` → **Marketing & Growth**
+- Rol rotativo del hero → **Marketing, growth y adquisición digital**
+- `.cartbar` → **Líder de Marketing · Santiago**
+- `meta description` → empieza con "Marketing digital, growth y ecommerce" (marketing
+  primero; "ecommerce" se queda solo como palabra clave de búsqueda)
+
+Sobrevive donde es nombre de sección o categoría, no etiqueta personal: el enlace del nav,
+el título de la sección `#ecommerce` y el breadcrumb "Equipo / Marketing / Ecommerce".
+
+**Si se vuelve a tocar, revisar los siete lugares juntos.** Si el título dice una cosa y la
+ficha otra, se nota.
+
+### Hero
+
+> Publicista, casi ingeniero comercial y bastante inquieto. Llevo el marketing de una
+> startup chilena y termino metido en todo: el contenido, la página, los números que hay
+> detrás. Cuando cierro el computador: música, fútbol y la gente de siempre.
+
+**El hero habla de la persona, no del puesto (sep 2026).** Cristian descartó la versión
+anterior ("Llevo el marketing… y construyo las páginas donde ocurre la conversión") porque
+*"solo hablaba de trabajo"*. Pidió algo sobre él. Se eligió el registro del **inquieto**:
+"bastante inquieto" y "termino metido en todo" son rasgos, no tareas, y de paso explican
+por qué hace el contenido y las páginas él mismo.
+
+La última frase es material que dio él: música, fútbol, amigos y familia. Se redactó como
+*"Cuando cierro el computador: música, fútbol y la gente de siempre"* — "cerrar el
+computador" es una imagen que hace de bisagra entre el trabajo y la vida, y evita el
+conector plano ("fuera de eso"). **"La gente de siempre" reemplaza a "estar con mis amigos
+y mi familia"**, que es la formulación de manual. Se descartaron "fuera del trabajo soy
+poco original" y "lo que no cambia".
+
+**Pendiente:** falta un detalle concreto (su equipo, qué escucha, si juega o solo mira).
+"Un partido de la U" dice mucho más que "fútbol", y esa línea es lo único de la página que
+nadie más podría escribir. La frase aguanta **un** detalle, no dos.
+
+Ojo: el eyebrow del hero ya **no lleva la estrella** SVG, es solo texto, y la bio de
+`#sobre-mi` **ya no abre con las credenciales** ("Publicista, líder de marketing y casi
+ingeniero comercial") porque ahora se repetirían con el hero — arranca directo con la frase
+favorita de Cristian.
 
 **El hero pasó por tres registros (sep 2026) y terminó en el más seco.**
 
