@@ -15,9 +15,18 @@ es que el sitio que lo presenta esté construido por él y se comporte como una 
 (nada de Shopify, VTEX, Jumpseller, medios de pago ni logística: no inventar experiencia
 que no tiene). Lo que sí trae: growth y adquisición digital, pauta, marca, contenido
 audiovisual propio, análisis de datos — y su diferenciador real, que construye él mismo
-sitios y landings. La frase que ordena todo el sitio es:
-*"No vengo de administrar una tienda. Vengo de hacer que la gente llegue, entienda y
-decida — y de construir yo mismo el sitio donde eso pasa."*
+sitios y landings.
+
+**El sitio ya no declara el vacío (sep 2026).** Hubo dos frases que lo reconocían — *"No
+vengo de administrar una tienda…"* en `#ecommerce` y *"No he administrado una tienda, pero
+sé cómo funciona una ficha de producto"* en `#ficha` — y **Cristian las quitó**. La bajada
+de Ecommerce quedó como *"Busco que la gente llegue, entienda y decida — y construyo el
+sitio donde eso pasa"*: habla de intención, no de historial.
+
+**No es una mentira y no hay que "restaurarlas".** Callar algo no es afirmar lo contrario, y
+las cuatro frases que sí reclamaban experiencia de tienda ya se corrigieron (ver la tabla
+más abajo). **La regla que sigue en pie es la otra: nunca escribir que administró una
+tienda, ni dar por hecha una práctica que no ha tenido.**
 
 ## Estado actual
 
@@ -188,7 +197,7 @@ frases que insinuaban experiencia de tienda:
 
 | Antes | Ahora |
 |---|---|
-| "Si voy a decir que **sé armar una tienda**, lo justo es mostrarlo" | "No he administrado una tienda, pero sé cómo funciona una ficha de producto. Así que armé una." |
+| "Si voy a decir que **sé armar una tienda**, lo justo es mostrarlo" | *(la bajada de la ficha quedó solo con la instrucción de uso)* |
 | "sostiene la relación **después de la primera compra**… el **segundo pedido** cueste menos" | "sostiene la relación cuando la campaña ya terminó… la próxima conversión no parta de cero" |
 | "Construyo la página donde ocurre **la venta**" (rol del hero) | "Construyo las páginas donde ocurre la conversión" |
 | "La página **que vende**" (tarjeta Convertir) | "La página donde se decide" |
@@ -264,9 +273,9 @@ favorita de Cristian.
 También se descartaron las versiones que contaban el aprendizaje como iniciativa
 ("me faltaba entender la página, así que aprendí a construirla" / "no solo a pedirlas").
 
-**Dónde va la humildad:** en la sección Ecommerce, no en el hero. Ahí ya está la frase
-*"No vengo de administrar una tienda…"*, que llega después de mostrar el trabajo y por eso
-se lee como honestidad y no como disculpa.
+**Nada de matices en el hero.** Los que había en la sección Ecommerce y en la ficha
+Cristian los terminó quitando también (ver arriba): el sitio no habla del vacío en ninguna
+parte. Lo que no puede hacer es reclamar lo contrario.
 La `<meta name="description">` refleja el hero: si cambia uno, revisar el otro.
 
 ### Bio
