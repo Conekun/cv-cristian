@@ -74,6 +74,19 @@ con IA y lo corrigió explícitamente (sep 2026). El encuadre correcto es que la
 herramienta y el criterio es de él — y que eso *es* la demostración de "Desarrollo con IA",
 la habilidad que está vendiendo para el cargo. No es una concesión: es el argumento.
 
+**Tono: realista y humilde, pero con seguridad (sep 2026).** Cristian revisó la sección y
+dijo que los copy sonaban *demasiado autosuficientes*. Se sacaron las variantes de
+"no espera a nadie" / "no dependo de nadie" / "sin esperar a nadie", que se repetían en tres
+tarjetas y en el bloque `.proof`. El criterio: describir el proceso, no declararse
+independiente de los demás. Donde el "yo" suena a alarde, sirve la **voz impersonal**:
+Cristian escribió él mismo el remate de la tarjeta 02 — *"Si algo no está funcionando, se
+testea otra opción y se implementa"* — y ése es el registro modelo para el resto.
+También salieron los remates de superioridad tipo "sin reportes de adorno".
+Se prefiere el hecho concreto por sobre la frase de eslogan.
+>>> Resuelto: el segundo párrafo de la bio (`#sobre-mi`) terminaba en *"sin esperar a
+nadie"* y ahora cierra con *"; si algo no convierte, se ajusta y se vuelve a medir"*,
+en el mismo registro impersonal.
+
 ### Portafolio como catálogo de tienda (`#portafolio`)
 
 En vez de "En preparación", las tarjetas usan **estados de stock** (`.work__stock`):
@@ -92,13 +105,19 @@ precio ("Conversemos"), dos grupos de variantes con radios accesibles
 remoto), descripción que cambia con el formato (atributo `data-desc`), estado de stock,
 tabla de especificaciones y dos acciones: "Sumar al equipo" (agrega al carrito) y
 "Guardar como PDF" (`window.print()`).
-La columna de la imagen (`.pdp__col`) es `position:sticky`, como en cualquier PDP, y
-debajo de la foto lleva una etiqueta (`.pdp__code`) con **un código de barras Code 39 real
+La columna izquierda (`.pdp__col`) va **foto → código de barras → especificaciones**, para
+que la tabla se lea como parte del producto y no como un apéndice; la derecha queda solo con
+la identidad y la compra. Ya **no es sticky**: con las especificaciones dentro es demasiado
+larga para que tenga sentido. Debajo de la foto lleva una etiqueta (`.pdp__code`) con **un código de barras Code 39 real
 y escaneable** que codifica `CC-2026`, más el SKU como pie.
 
 El patrón está generado y verificado con round-trip (se decodifica de vuelta a `*CC-2026*`);
 son 45 `<rect>` con anchos 2 (angosto) y 6 (ancho), separadores de 2 y zonas mudas de 20.
 Si cambias el texto del código hay que regenerar el patrón, no basta con editar el SKU.
+
+Se evaluó sumar un QR que abriera el sitio o LinkedIn (la cámara del iPhone no lee Code 39,
+solo QR, así que el código actual en la práctica no se escanea). **Cristian prefirió dejarlo
+como está** (sep 2026): vale como guiño de etiqueta de producto, no como utilidad.
 
 **Ojo con `.pdp__label`:** ese nombre ya lo usan los rótulos "FORMATO" y "MODALIDAD"
 (`display:block; opacity:.62`). La etiqueta del código de barras se llama `.pdp__code`
@@ -162,32 +181,56 @@ contextos sin API segura (por ejemplo abrir el archivo con `file://`).
 
 ### Hero (reposicionado a ecommerce)
 
-> Llevo el marketing de una startup chilena y construyo yo mismo los sitios donde ocurre
-> la conversión. Tráfico que sirve, una página que se entiende y los datos para decidir
-> dónde poner la próxima moneda.
+> Llevo el marketing de una startup chilena y construyo las páginas donde ocurre la
+> conversión. Tráfico que sirve, una página que se entiende y datos para decidir dónde va
+> la próxima moneda.
+
+**El hero pasó por tres registros (sep 2026) y terminó en el más seco.**
+
+1. *"…construyo **yo mismo los sitios** donde ocurre la conversión"* — descartada: a
+   Cristian le sonaba a declararse **experto**, y no lo es todavía.
+2. *"Me metí a construir… y **en eso sigo aprendiendo**"* — descartada: el matiz frena
+   justo en el hero, que es lo primero que se lee, y hace que la lista de tres cuelgue de
+   una disculpa.
+3. **Actual:** los hechos sin narrativa de trayecto. Se le quitó el "yo mismo", que era lo
+   que más cargaba el tono de autoridad, y se dejaron "las páginas" en vez de "los sitios".
+
+También se descartaron las versiones que contaban el aprendizaje como iniciativa
+("me faltaba entender la página, así que aprendí a construirla" / "no solo a pedirlas").
+
+**Dónde va la humildad:** en la sección Ecommerce, no en el hero. Ahí ya está la frase
+*"No vengo de administrar una tienda…"*, que llega después de mostrar el trabajo y por eso
+se lee como honestidad y no como disculpa.
+La `<meta name="description">` refleja el hero: si cambia uno, revisar el otro.
 
 ### Bio
 
 > Publicista, líder de marketing y casi ingeniero comercial. Construyo marca, cuento
-> historias y coordino ferias y eventos donde cada detalle tiene que verse tan bien como
-> funciona. Produzco el contenido audiovisual, cuido la coherencia visual y acelero el
-> proceso con IA, sin perder criterio.
+> historias y *las llevo hasta donde se vende: una feria, un stand, una página*. Cada
+> detalle tiene que verse tan bien como funciona. Produzco el contenido audiovisual, cuido
+> la coherencia visual y acelero el proceso con IA, sin perder criterio.
 
 **Segundo párrafo (sep 2026), para aterrizar el cargo de ecommerce:**
 
 > Ese mismo criterio lo llevo al canal digital: traer al que importa, explicarle en dos
 > segundos y que la página haga el resto. *Armo el sitio, escribo el copy y reviso los
-> números* — las tres, sin esperar a nadie.
+> números*; si algo no convierte, se ajusta y se vuelve a medir.
 
-Se evaluó reescribir el trío de verbos para cambiar "coordino ferias y eventos" por algo
-de venta; Cristian prefirió **no tocar la frase** y sumar este párrafo aparte. Las ferias
-siguen respaldadas en Experiencia (Trefimet).
+**El trío de verbos cambió (sep 2026) — esto reemplaza la regla anterior.** Durante meses
+la instrucción fue *no tocar* "Construyo marca, cuento historias y coordino ferias y
+eventos". Cristian mismo lo reabrió: le sigue gustando la frase, pero **tiene poca relación
+con el cargo de ecommerce**. Se conservó el ritmo de tres tiempos y se cambió solo el
+destino: *"y las llevo hasta donde se vende: una feria, un stand, una página"*. Las ferias
+no desaparecen, pasan a ser un formato más — el canal digital entra en la misma lista en vez
+de quedar relegado al párrafo siguiente. Se descartaron "armo el lugar donde eso se convierte
+en venta" (perdía las ferias) y dejar la frase intacta con un puente aparte.
+Las ferias siguen respaldadas en Experiencia (Trefimet).
 En el panel de datos al lado, "Base / Santiago, Chile" pasó a **"Enfoque / Ecommerce &
 Growth"** — Santiago sigue apareciendo en el hero, la ficha y contacto.
 
 Esta bio se iteró bastante. Cristian prefiere **tono punchy, frases cortas**.
-La frase *"Construyo marca, cuento historias y coordino ferias y eventos"* es la que más
-le gusta — **no tocarla**. Evitar adjetivos genéricos tipo "proactivo", "visión estratégica",
+El ritmo de *"Construyo marca, cuento historias y…"* es el que más le gusta: **respetar el
+trío de verbos**, aunque el tercero ya se haya actualizado. Evitar adjetivos genéricos tipo "proactivo", "visión estratégica",
 "adaptable a entornos dinámicos": los descartó explícitamente por sonar a piloto automático.
 
 ### Experiencia
